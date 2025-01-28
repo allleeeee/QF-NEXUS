@@ -1,0 +1,176 @@
+/* Basic resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  /* Wrapper for the entire contact page */
+  .contact-wrapper {
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    border: 1px solid #ccc;
+  }
+  
+  /* Left side (Form) and Right side (Info) */
+  .form-section {
+    flex: 2;
+    font-family: "Montserrat", sans-serif;
+    padding: 2rem;
+  }
+  .info-section {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  /* Divider line in the middle */
+  .divider {
+    width: 1px;
+    background-color: #ccc;
+  }
+  
+  /* Form styles */
+  h1 {
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 1rem;
+  }
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+  .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .form-group input,
+  .form-group textarea {
+    padding: 0.6rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+  }
+  .form-group textarea {
+    resize: none;
+    font-family: "Montserrat", sans-serif;
+  }
+  .submit-btn {
+    background-color: #1569b8; /* dark green */
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 0px;
+  }
+  .submit-btn:hover {
+    background-color: black; /* darker shade */
+  }
+  
+  /* Feedback message area */
+  #form-status {
+    margin-top: 1rem;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.95rem;
+  }
+  
+  /* Right side info */
+  .info-section h2 {
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 1rem;
+  }
+  .info-section p {
+    margin-bottom: 2rem;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.6;
+  }
+  .contact-detail {
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 1rem;
+  }
+  .icon {
+    margin-right: 0.5rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem; /* Just using emojis for example */
+  }
+  .detail-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+  }
+  .social-icons {
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+    font-family: "Montserrat", sans-serif;
+    object-fit: cover;
+  }
+  
+  /* Responsive layout for small screens */
+  @media (max-width: 768px) {
+    .contact-wrapper {
+      flex-direction: column;
+    }
+    .divider {
+      display: none; /* Hide the vertical line on small screens */
+    }
+    .form-section, .info-section {
+      flex: none;
+      width: 100%;
+      padding: 1rem;
+    }
+    .row {
+      flex-direction: column; /* Stack First/Last Name fields on top of each other */
+    }
+  }
+
+  .big-contact-title {
+    font-family: "Playfair Display", serif;;
+    font-size: 3.5rem;       /* Make it large */
+    font-weight: 700;      /* Bold */
+    margin-bottom: 1rem;   /* Space below the title */
+    text-transform: uppercase; /* Optional: all caps */
+    text-align: center;    /* Or left/right if you prefer */
+    color: #000000;        /* Dark green, matching your button color scheme */
+  }
+
+  /* (Your existing contact.css styles above...) */
+
+/* Calendly scheduling block */
+.schedule-widget {
+    margin-top: 2rem;
+  }
+  .schedule-widget h3 {
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+    font-size: 2rem;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    color: #000;
+  }
