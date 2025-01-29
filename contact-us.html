@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Scope+One&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+ <!-- Calendly Embed Script (required for inline widget) -->
+ <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<!-- Link to external stylesheet (optional) -->
+  <!-- <link rel="stylesheet" href="css/styles.css" /> -->
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Logo Section -->
+<div class="logo">
+    <!-- Replace 'logo.png' with the path to your actual logo file -->
+    <img src="img/logo.png" alt="Site Logo" />
+  </div>
+
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <nav>
+      <ul class="navbar">
+        <!-- Page 1 -->
+        <li>
+          <a href="index.html">Home</a>
+        
+        <!-- Page 2 -->
+        <li>
+          <a href="meet-us.html">Our Leadership</a>
+          <ul class="dropdown">
+            <li><a href="exbio.html">CEO's Extended Bio</a></li>
+            <li><a href="values.html">Our Values and Mission</a></li>
+          </ul>
+        </li>
+
+        <!-- Page 3 -->
+        <li>
+          <a href="solutions.html">Solutions</a>
+          <ul class="dropdown">
+            <li><a href="riesgos-asg.html">ESG risks</a></li>
+            <li><a href="cumpli.html">Cumplimiento Legal</a></li>
+            <li><a href="risk.html">Risk</a></li>
+          </ul>
+        </li>
+
+        <!-- Page 4 -->
+        <li>
+          <a href="page3.html">News</a>
+
+        <!-- Page 5 -->
+        <li>
+          <a href="page4.html">Blog</a>
+
+        <!-- Page 6 -->
+        <li>
+          <a href="contact-us.html">Get in Touch</a>
+    </nav>
+  </header>
+
+    <div class="form-section">
+        <h1 class="big-contact-title">CONTACT US</h1>
+        <!-- (Optionally remove the old h1 or rename it) -->
+        <!-- <h1>We'd love to hear from you</h1> -->
+      
+        <form id="contact-form">
+          <!-- ...existing form fields... -->
+        </form>
+      </div>
+      
+  <div class="contact-wrapper">
+    <!-- Left side: Contact Form -->
+
+  <!-- MAIN WRAPPER -->
+  <div class="contact-wrapper">
+    
+    
+    <!-- SINGLE FORM (with action + method) -->
+    <form id="my-form" action="https://formspree.io/f/xrbeeayk" method="POST">
+      <div class="form-section">
+        <h2>We'd love to hear from you</h2>
+
+        <div class="row">
+          <div class="form-group">
+            <label for="firstName">FIRST NAME</label>
+            <input type="text" id="firstName" name="firstName" placeholder="John" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">LAST NAME</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Doe" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group">
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">PHONE NUMBER</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8901" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">WHAT DO YOU HAVE IN MIND</label>
+          <textarea id="message" name="message" placeholder="Please enter query..." rows="5" required></textarea>
+        </div>
+
+        <!-- Feedback messages (hidden by default) -->
+        <div id="form-status"></div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
+    </form>
+
+    <!-- Place this script at the end of the body tag -->
+<script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+  </script>
+
+    <!-- Vertical divider line -->
+    <div class="divider"></div>
+
+    <!-- Right side: Contact Info -->
+    <div class="info-section">
+      <h2>Contact us</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt.
+      </p>
+
+      <div class="contact-detail">
+        <span class="icon">☎</span>
+        <span class="detail-text">+1258 3258 5679</span>
+      </div>
+      <div class="contact-detail">
+        <span class="icon">✉</span>
+        <span class="detail-text">hello@workik.com</span>
+      </div>
+      <div class="contact-detail">
+        <span class="icon">📍</span>
+        <span class="detail-text">102 street, y cross 485656</span>
+      </div>
+
+      <!-- Social icons (example placeholders) -->
+      <div class="social-icons">
+        <a href="#"><img src="img/google-icon.png" alt="Google" /></a>
+        <a href="#"><img src="img/twitter-icon.png" alt="Twitter" /></a>
+        <a href="#"><img src="img/instagram-icon.png" alt="Instagram" /></a>
+        <a href="#"><img src="img/facebook-icon.png" alt="Facebook" /></a>
+      </div>
+    </div>
+  </div>
+
+    <!-- Calendly Widget -->
+    <div class="schedule-widget">
+        <h3>Schedule a Meeting</h3>
+        <div 
+          class="calendly-inline-widget"
+          data-url="https://calendly.com/kattia-ramirezg" 
+          style="min-width:320px; height:630px;">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Link to external JS -->
+  <script src="contact.js"></script>
+
+</body>
+</html>
+
+   <!-- FOOTER (Optional) -->
+  <!-- Footer Section -->
+  <footer class="footer">
+    <!-- Left side: Logo -->
+    <div class="footer-left">
+      <!-- Replace the src with your real logo -->
+      <img src="img/logo.png" alt="Company Logo" class="footer-logo">
+    </div>
+
+    <!-- Right side: Images linking to Google -->
+    <div class="footer-right">
+      <!-- Each image is a link to Google (open in new tab) -->
+      <a 
+        href="https://google.com" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        <img src="img/link.jpg" alt="Google Link 1">
+      </a>
+
+      <a 
+        href="https://google.com" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        <img src="img/x.png" alt="Google Link 2">
+      </a>
+
+      <a 
+        href="https://google.com" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        <img src="img/youtube.png" alt="Google Link 3">
+      </a>
+    </div>
+
+    <!-- Copyright Line -->
+    <div class="footer-copyright">
+      &copy; 2025 QF Nexus. All rights reserved.
+    </div>
+
+  </footer>
+    
+      <!-- JavaScript file -->
+      <script src="script.js"></script>
+  </main>
+
+</body>
+</html>
